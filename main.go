@@ -20,13 +20,22 @@ func main() {
 
 	// Make the message print in uppercase:
 
+	//check to see if it should be in upper case
+	// if *caps {
+	// 	for i := 0; i < *num; i++ {
+	// 		fmt.Println(strings.ToUpper(*msg))
+	// 	}
+	// } else if !(*caps) {
+	// 	for i := 0; i < *num; i++ {
+	// 		fmt.Println((*msg))
+	// 	}
+	// }
+
+	// The beter approach:
 	if *caps {
-		for i := 0; i < *num; i++ {
-			fmt.Println(strings.ToUpper(*msg))
-		}
-	} else if !(*caps) {
-		for i := 0; i < *num; i++ {
-			fmt.Println((*msg))
-		}
+		*msg = strings.ToUpper(*msg)
+	}
+	for i := 0; i < *num; i++ {
+		fmt.Println(*msg)
 	}
 }
