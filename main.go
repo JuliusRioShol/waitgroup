@@ -15,7 +15,7 @@ func main() {
 
 	// Print all in Caps:
 	caps := flag.Bool("caps", false, "should the string be in all uppercase?")
-	flag.Parse()
+
 	// Print in all Caps:
 
 	// Make the message print in uppercase:
@@ -30,6 +30,21 @@ func main() {
 	// 		fmt.Println((*msg))
 	// 	}
 	// }
+
+	//Flag to reverse a string:
+	reverse := flag.Bool("r", false, "reverse the string")
+	// check if we should reverse the string:
+	flag.Parse()
+	if *reverse {
+		//reverse string
+		var result string //1. Create an empty string.
+
+		//2. Iterate over the string that we want to reverse:
+		for _, value := range *msg {
+			result = string(value) + result
+		}
+		*msg = result
+	}
 
 	// The beter approach:
 	if *caps {
